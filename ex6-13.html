@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비트연산</title>
+  <script>
+    //변수에 들어있는 정수 값을 8비트의 2진수로 출력하는 함수
+    function digit8(v) {
+      var str = "";
+      for(i=0; i<8; i++, v<<=1) {
+        if((v & 0x80)) str += "1";
+        else str += "0";
+      }
+      return str;
+    }
+  </script>
+</head>
+<body>
+  <h2>비트 논리연산과 시프트연산</h2>
+  <hr>
+  <script>
+    var x = 10, y = 3;
+    document.write("<pre>");
+    document.write("x = " + x + ", y = " + y + "<br>");
+    document.write("x :          " + digit8(x) + "<br>");
+    document.write("y :          " + digit8(y) + "<br>");
+    document.write("<hr>");
+    document.write("x & y :      " + digit8(x&y) + "<br>");
+    document.write("x | y :      " + digit8(x|y) + "<br>");
+    document.write("x ^ y :      " + digit8(x^y) + "<br>");
+    document.write("~x    :      " + digit8(~x) + "<br>");
+    document.write("<hr>");
+    document.write("x << 1 :     " + digit8(x<<1) + " (" + (x<<1) + ")<br>");
+    document.write("x >> 1 :     " + digit8(x>>1) + " (" + (x>>1) + ")<br>");
+    document.write("x >>> 1:     " + digit8(x>>>1) + " (" + (x>>>1) + ")<br>");
+    document.write("</pre>");
+  </script>
+</body>
+</html>

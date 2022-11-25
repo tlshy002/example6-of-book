@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>script태그작성</title>
+  <script>
+    function over(obj) {
+      obj.src="./media/석양.png";
+    }
+    function out(obj) {
+      obj.src="./media/파도.png";
+    }
+  </script>
+</head>
+<body>
+  <h2>script코드에 자바스크립트 작성</h2>
+  <h3>마우스를 올려보세요</h3>
+  <hr>
+  <img src="./media/파도.png" alt="파도" width="500" height="300"
+      onmouseover="over(this)"
+      onmouseout="out(this)">
+</body>
+</html>
